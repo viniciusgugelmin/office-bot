@@ -43,12 +43,6 @@
 
 4fun project - Discord office bot
 
-<ul>
-  <li>Login/register;</li>
-  <li>Poster;</li>
-  <li>Timeline;</li>
-</ul>
-
 
 ## Usage
 
