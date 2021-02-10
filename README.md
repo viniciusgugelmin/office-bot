@@ -3,8 +3,10 @@
     <img src="info/readme.png" alt="readme-logo" width="80" height="80">
   </a>
 
-  <h3 align="center">office-bot</h3>
-
+  <h3 align="center">
+    office-bot&nbsp
+    <img src="info/discord-logo.png" alt="discord-logo" width="20" height="20">
+  </h3>
   <p align="center">
     Discord office bot
     <br />
