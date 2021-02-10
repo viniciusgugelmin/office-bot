@@ -1,0 +1,12 @@
+{
+  "name": "office-bot",
+  "version": "1.0.0",
+  "main": "officebot.js",
+  "repository": "https://github.com/viniciusgugelmin/office-bot.git",
+  "author": "Vinicius <vinigugelmin@gmail.com>",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "discord.js": "^12.5.1"
+  }
+}
