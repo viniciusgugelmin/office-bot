@@ -29,7 +29,7 @@
   <ol>
     <li>
       <a href="#about-the-project">About The Project</a>
-      <ul><li><a href="#about-the-project">Usage</a></li></ul>
+      <ul><li><a href="#usage">Usage</a></li></ul>
     </li>
     <li><a href="#roadmap">Roadmap</a></li>
     <li><a href="#contributing">Contributing</a></li>
