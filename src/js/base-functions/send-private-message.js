@@ -1,4 +1,4 @@
-const { PREFIX } = require("../config.json");
+const { PREFIX } = require("../../config.json");
 
 module.exports = (bot, triggerText, replyText) => {
     bot.on('message', message => {

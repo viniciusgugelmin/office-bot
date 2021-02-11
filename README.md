@@ -49,7 +49,7 @@
 First, you'll gonna run this 2 lines in order.
 ```
 git clone https://github.com/viniciusgugelmin/office-bot.git
-yarn add
+yarn install
 ```
 
 To create the bot at Discord, follow the step 1 ("Configuring a Discord bot") [here](https://www.digitalocean.com/community/tutorials/how-to-build-a-discord-bot-with-node-js-pt).
@@ -60,9 +60,11 @@ Configure the "config.json" file.
   "BOT_TOKEN": "You can get this token from the link above",
   "BOT_NAME": "The name must be equal to the bot at Discord",
   "PREFIX": "Choose a prefix...",
+  "SEPARATOR_ARGS": "Choose a separator...",
   "NOT_ALLOWED_MESSAGE": "Choose a message...",
   "WRONG_PLACE_MESSAGE": "Choose a message...",
-  "ARGUMENTS_MISSING_MESSAGE": "Choose a message..."
+  "ARGUMENTS_MISSING_MESSAGE": "Choose a message...",
+  "ARGUMENT_INCORRECT": "Choose a message..."
 }
 ```
 And you're going to have something like this...
@@ -70,10 +72,12 @@ And you're going to have something like this...
 {
   "BOT_TOKEN": "12345678910111213141516171819",
   "BOT_NAME": "Office Bot",
-  "PREFIX": "!",
+  "PREFIX": "$",
+  "SEPARATOR_ARGS": "+",
   "NOT_ALLOWED_MESSAGE": "You do not have permission to use this command!",
   "WRONG_PLACE_MESSAGE": "This command can not be used in private!",
-  "ARGUMENTS_MISSING_MESSAGE": "Arguments missing!"
+  "ARGUMENTS_MISSING_MESSAGE": "Arguments missing!",
+  "ARGUMENT_INCORRECT": "Argument incorrect!"
 }
 ```
 
