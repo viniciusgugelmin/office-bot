@@ -3,6 +3,7 @@ const readCommand = require("../base-functions/read-command");
 const formatText = require("../base-functions/format-text");
 const createMessageEmbed = require("../nano-functions/create-message-embed");
 const createChannel = require("../nano-functions/create-channel");
+const addReactions = require("../nano-functions/add-reactions");
 const { PREFIX, WRONG_PLACE_MESSAGE } = require("../../config.json");
 
 const _ = require("lodash");
@@ -28,8 +29,9 @@ module.exports = (bot) => {
                 fields.forEach((field) => {
                     field.name = field.commands.toString().replace(',', ', ');
                     delete field.commands;
-                    field.value = field.description;
+                    field.value = field.description + (field.arguments ? '\n ..................................... \n' + field.arguments : '');
                     delete field.description;
+                    delete field.arguments
                 });
 
                 message.channel.send(createMessageEmbed(`Commands list (${PREFIX}command)`, message.guild.iconURL(), fields));
@@ -39,12 +41,23 @@ module.exports = (bot) => {
 
         index++;
         if (!resolved) {
-            // Command: 'ping'
-            // Response: 'Pong!'
-            const commandsPong = commands[index].commands;
-            readCommand(bot, message, commandsPong, '', message => {
-                message.channel.send(formatText('Pong!', 'addItalic'));
-                resolved = true;
+            // Command: ['createvoicechannel']
+            // Action: Create voice channel
+            // Arguments: <channel-name>+<category-id>
+            const commandsCreateVoiceChannel = commands[index].commands;
+            readCommand(bot, message, commandsCreateVoiceChannel, 'ADMINISTRATOR', (message) => {
+                createChannel(bot, message, commandsCreateVoiceChannel, 'voice');
+            });
+        }
+
+        index++;
+        if (!resolved) {
+            // Command: ['createtextchannel']
+            // Action: Create text channel
+            // Arguments: <channel-name>+<category-id>
+            const commandsCreateTextChannel = commands[index].commands;
+            readCommand(bot, message, commandsCreateTextChannel, 'ADMINISTRATOR', (message) => {
+                createChannel(bot, message, commandsCreateTextChannel, 'text');
             });
         }
 
@@ -63,21 +76,13 @@ module.exports = (bot) => {
 
         index++;
         if (!resolved) {
-            // Command: ['createtextchannel', 'createtxtchannel']
-            // Action: Create text channel
-            const commandsCreateTextChannel = commands[index].commands;
-            readCommand(bot, message, commandsCreateTextChannel, 'ADMINISTRATOR', (message) => {
-                createChannel(bot, message, commandsCreateVoiceChannel, 'text');
-            });
-        }
-
-        index++;
-        if (!resolved) {
-            // Command: ['createvoicechannel', 'createvcchannel']
-            // Action: Create voice channel
-            const commandsCreateVoiceChannel = commands[index].commands;
-            readCommand(bot, message, commandsCreateVoiceChannel, 'ADMINISTRATOR', (message) => {
-                createChannel(bot, message, commandsCreateVoiceChannel, 'voice');
+            // Command: 'ping'
+            // Response: 'Pong!'
+            const commandsPong = commands[index].commands;
+            readCommand(bot, message, commandsPong, '', message => {
+                addReactions(message, ['🏓']);
+                message.channel.send(formatText('Pong!', 'addItalic'));
+                resolved = true;
             });
         }
     });

@@ -1,8 +1,8 @@
 module.exports = [
     {commands: ['help'], description: 'Show commands list'},
-    {commands: ['ping'], description: 'Pong!'},
+    {commands: ['createvoicechannel', 'cvc'], description: 'Create voice channel', arguments: '\<\channel-name>+<category-id> \n required+n-required'},
+    {commands: ['createtextchannel', 'ctc'], description: 'Create text channel', arguments: '\<\channel-name>+<category-id> \n required+n-required'},
     {commands: ['cc', 'clearchannel'], description: 'Clear text'},
-    {commands: ['createtextchannel', 'createtxtchannel'], description: 'Create text channel \n .........arguments......... \n \<\channel-name>+<category-id> \n required+n-required'},
-    {commands: ['createvoicechannel', 'createvcchannel'], description: 'Create voice channel \n .........arguments......... \n \<\channel-name>+<category-id> \n required+n-required'},
+    {commands: ['ping'], description: 'Pong!'},
 ]
 
