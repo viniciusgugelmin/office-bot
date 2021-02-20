@@ -47,5 +47,4 @@ module.exports = (bot, message, commandsCreateChannel, typeChannel) => {
     }
 
     message.delete();
-    resolved = true;
 }

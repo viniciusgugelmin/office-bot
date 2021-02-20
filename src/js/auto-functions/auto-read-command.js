@@ -2,7 +2,8 @@ const commands = require("../items/commands");
 const readCommand = require("../base-functions/read-command");
 const formatText = require("../base-functions/format-text");
 const createMessageEmbed = require("../nano-functions/create-message-embed");
-const createChannel = require("../nano-functions/create-channel");
+const createHelp = require("../main-functions/create-help");
+const createChannel = require("../main-functions/create-channel");
 const addReactions = require("../nano-functions/add-reactions");
 const { PREFIX, WRONG_PLACE_MESSAGE } = require("../../config.json");
 
@@ -24,17 +25,7 @@ module.exports = (bot) => {
             // Action: Show commands list
             const commandsHelp = commands[index].commands;
             readCommand(bot, message, commandsHelp, '', message => {
-                let fields = _.cloneDeep(commands);
-
-                fields.forEach((field) => {
-                    field.name = field.commands.toString().replace(',', ', ');
-                    delete field.commands;
-                    field.value = field.description + (field.arguments ? '\n ..................................... \n' + field.arguments : '');
-                    delete field.description;
-                    delete field.arguments
-                });
-
-                message.channel.send(createMessageEmbed(`Commands list (${PREFIX}command)`, message.guild.iconURL(), fields));
+                createHelp(bot, message, commands, _);
                 resolved = true;
             });
         }
@@ -47,6 +38,7 @@ module.exports = (bot) => {
             const commandsCreateVoiceChannel = commands[index].commands;
             readCommand(bot, message, commandsCreateVoiceChannel, 'ADMINISTRATOR', (message) => {
                 createChannel(bot, message, commandsCreateVoiceChannel, 'voice');
+                resolved = true;
             });
         }
 
@@ -58,6 +50,7 @@ module.exports = (bot) => {
             const commandsCreateTextChannel = commands[index].commands;
             readCommand(bot, message, commandsCreateTextChannel, 'ADMINISTRATOR', (message) => {
                 createChannel(bot, message, commandsCreateTextChannel, 'text');
+                resolved = true;
             });
         }
 
