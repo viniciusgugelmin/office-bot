@@ -43,3 +43,24 @@
 
 #### Prefix
 - `$`
+
+## [1.2.0] - 2021-02-22
+### Added
+- Main functions
+  - Create channel
+  - Create help
+  - Create server info
+  - Moderate member
+- Reaction to $ping command
+- Requires comments
+- Help message reaction
+
+#### Commands added
+- `'serverinfo'` Show server info
+- `'kick'` Kick member
+- `'ban'` Ban member
+
+### Modified
+
+#### Prefix
+- `$`

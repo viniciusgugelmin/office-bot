@@ -1,4 +1,6 @@
-const formatText = require("../base-functions/format-text");
+// Base functions
+const formatText = require("./format-text");
+// Config
 const { PREFIX, NOT_ALLOWED_MESSAGE } = require("../../config.json");
 
 module.exports = (bot, message, aliases, permissionNeeded, callback) => {

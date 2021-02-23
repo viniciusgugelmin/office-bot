@@ -1,3 +1,4 @@
+// Config
 const { PREFIX } = require("../../config.json");
 
 module.exports = (bot) => {

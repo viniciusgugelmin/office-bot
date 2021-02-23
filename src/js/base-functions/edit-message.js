@@ -1,5 +1,7 @@
-const { BOT_NAME } = require("../../config.json");
+// Nano functions
 const addReactions = require("../nano-functions/add-reactions");
+// Config
+const { BOT_NAME } = require("../../config.json");
 
 module.exports = async (bot, idChannel, idMessage, text, reactions = []) => {
     const channel = await bot.channels.fetch(idChannel);

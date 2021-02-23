@@ -1,6 +1,9 @@
+// Base functions
 const formatText = require("../base-functions/format-text");
+// Nano functions
 const replaceArgsCommand = require("../nano-functions/replace-args-command");
 const splitArgs = require("../nano-functions/split-args");
+// Config
 const { SEPARATOR_ARGS, ARGUMENTS_MISSING_MESSAGE, ARGUMENT_INCORRECT } = require("../../config.json");
 
 module.exports = (bot, message, commandsCreateChannel, typeChannel) => {

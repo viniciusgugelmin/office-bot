@@ -1,13 +1,18 @@
+// Items
 const commands = require("../items/commands");
+// Base functions
 const readCommand = require("../base-functions/read-command");
 const formatText = require("../base-functions/format-text");
-const createMessageEmbed = require("../nano-functions/create-message-embed");
+// Main functions
 const createHelp = require("../main-functions/create-help");
 const createServerInfo = require("../main-functions/create-server-info");
 const createChannel = require("../main-functions/create-channel");
+const moderateMember = require("../main-functions/moderate-member");
+// Nano functions
+const createMessageEmbed = require("../nano-functions/create-message-embed");
 const addReactions = require("../nano-functions/add-reactions");
+// Config
 const { PREFIX, WRONG_PLACE_MESSAGE } = require("../../config.json");
-
 const _ = require("lodash");
 
 module.exports = (bot) => {
@@ -26,7 +31,7 @@ module.exports = (bot) => {
             // Description: Show commands list
             const commandsHelp = commands[index].commands;
             readCommand(bot, message, commandsHelp, '', message => {
-                createHelp(bot, message, commands, _);
+                createHelp(bot, message, commands);
                 resolved = true;
             });
         }
@@ -37,7 +42,7 @@ module.exports = (bot) => {
             // Description: 'Show server info'
             const commandsServerInfo = commands[index].commands;
             readCommand(bot, message, commandsServerInfo, '', message => {
-                createServerInfo(bot, message, _);
+                createServerInfo(bot, message);
                 resolved = true;
             });
         }
@@ -75,6 +80,30 @@ module.exports = (bot) => {
                 message.channel.messages.fetch().then((messages) => {
                     message.channel.bulkDelete(messages);
                 });
+                resolved = true;
+            });
+        }
+
+        index++;
+        if (!resolved) {
+            // Command: ['kick']
+            // Description: Kick member
+            // Arguments: <@member>
+            const commandsKick = commands[index].commands;
+            readCommand(bot, message, commandsKick, '', message => {
+                moderateMember(bot, message, 'KICK_MEMBERS', 'kick');
+                resolved = true;
+            });
+        }
+
+        index++;
+        if (!resolved) {
+            // Command: ['ban']
+            // Description: Ban member
+            // Arguments: <@member>
+            const commandsBan = commands[index].commands;
+            readCommand(bot, message, commandsBan, 'ADMINISTRATOR', message => {
+                moderateMember(bot, message, 'BAN_MEMBERS', 'ban');
                 resolved = true;
             });
         }

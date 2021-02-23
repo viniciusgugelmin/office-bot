@@ -1,6 +1,9 @@
+// Nano functions
 const createMessageEmbed = require("../nano-functions/create-message-embed");
+// Config
+const _ = require("lodash");
 
-module.exports = (bot, message, _) => {
+module.exports = (bot, message) => {
     const { region, memberCount, owner, afkTimeout } = message.guild;
 
     let fields = [
