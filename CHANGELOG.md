@@ -44,7 +44,7 @@
 #### Prefix
 - `$`
 
-## [1.2.0] - 2021-02-22
+## [1.2.0] - 2021-02-24
 ### Added
 - Main functions
   - Create channel
@@ -54,13 +54,11 @@
 - Reaction to $ping command
 - Requires comments
 - Help message reaction
+- Add reactions to last message (nano-function)
+- Procfile
+- Server start
 
 #### Commands added
 - `'serverinfo'` Show server info
 - `'kick'` Kick member
 - `'ban'` Ban member
-
-### Modified
-
-#### Prefix
-- `$`

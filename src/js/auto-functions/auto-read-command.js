@@ -11,6 +11,7 @@ const moderateMember = require("../main-functions/moderate-member");
 // Nano functions
 const createMessageEmbed = require("../nano-functions/create-message-embed");
 const addReactions = require("../nano-functions/add-reactions");
+const addReactionsLastMessage = require ("../nano-functions/add-reactions-last-message");
 // Config
 const { PREFIX, WRONG_PLACE_MESSAGE } = require("../../config.json");
 const _ = require("lodash");
@@ -115,7 +116,8 @@ module.exports = (bot) => {
             const commandsPong = commands[index].commands;
             readCommand(bot, message, commandsPong, '', message => {
                 addReactions(message, ['🏓']);
-                message.channel.send(formatText('Pong!', 'addItalic'));
+                message.channel.send(formatText(`Pong!`, 'addItalic'));
+                _.delay(() => addReactionsLastMessage(message, ['🏓']), 300);
                 resolved = true;
             });
         }

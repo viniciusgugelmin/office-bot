@@ -1,6 +1,6 @@
 // Nano functions
 const createMessageEmbed = require("../nano-functions/create-message-embed");
-const addReactions = require("../nano-functions/add-reactions");
+const addReactionsLastMessage = require ("../nano-functions/add-reactions-last-message");
 // Config
 const { PREFIX } = require("../../config.json");
 const _ = require("lodash");
@@ -17,15 +17,6 @@ module.exports = (bot, message, commands) => {
     });
 
     message.channel.send(createMessageEmbed(`Commands list (${PREFIX}command)`, message.guild.iconURL(), fields));
-    const react = async (message) => {
-        await message.delete();
 
-        const fetched = await message.channel.messages.fetch({ limit: 1 });
-
-        if (fetched && fetched.first()) {
-            addReactions(fetched.first(), ['⬅', '➡']);
-        }
-    };
-
-    react(message);
+    _.delay(() => addReactionsLastMessage(message, ['⬅', '➡']), 750);
 }

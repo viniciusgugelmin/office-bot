@@ -2,6 +2,9 @@
   "name": "office-bot",
   "version": "1.2.0",
   "main": "officebot.js",
+  "scripts": {
+    "start": "node officebot.js"
+  },
   "repository": "https://github.com/viniciusgugelmin/office-bot.git",
   "author": "Vinicius <vinigugelmin@gmail.com>",
   "license": "MIT",
