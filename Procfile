@@ -1,1 +1,1 @@
-worker node officebot.js
+worker: node officebot.js
