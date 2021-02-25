@@ -62,3 +62,12 @@
 - `'serverinfo'` Show server info
 - `'kick'` Kick member
 - `'ban'` Ban member
+
+## [1.2.1] - 2021-02-25
+### Added
+- Don't allow auto read command (main-function)
+- Don't allow bot (main-function)
+- Activities (items)
+
+#### Prefix DM
+- `!`

@@ -18,5 +18,6 @@ module.exports = (bot, message, commands) => {
 
     message.channel.send(createMessageEmbed(`Commands list (${PREFIX}command)`, message.guild.iconURL(), fields));
 
-    _.delay(() => addReactionsLastMessage(message, ['⬅', '➡']), 750);
+    _.delay(() => addReactionsLastMessage(message, ['⬅', '➡']), 200);
+    _.delay(() => message.delete(), 200);
 }
