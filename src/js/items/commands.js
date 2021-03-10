@@ -7,5 +7,7 @@ module.exports = [
     {commands: ['kick'], description: 'Kick member', arguments: '\<\@member> \n required'},
     {commands: ['ban'], description: 'Ban member', arguments: '\<\@member> \n required'},
     {commands: ['ping'], description: 'Pong!'},
+    {commands: ['sum'], description: 'Sum'},
+    {commands: ['okay', 'ok'], description: 'Normalize jobs and variables, stop summing...'}
 ]
 

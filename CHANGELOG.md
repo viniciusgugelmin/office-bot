@@ -68,6 +68,11 @@
 - Don't allow auto read command (main-function)
 - Don't allow bot (main-function)
 - Activities (items)
+- Internal error message
+
+#### Commands added
+- `'sum'` Sum
+- `['okay', 'ok']` Normalize jobs and variables, stop summing...
 
 #### Prefix DM
 - `!`

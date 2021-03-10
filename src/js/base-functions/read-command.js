@@ -17,6 +17,5 @@ module.exports = (bot, message, aliases, permissionNeeded, callback) => {
         } else {
             message.channel.send(formatText(NOT_ALLOWED_MESSAGE, 'addBold'));
         }
-
     }
 };
