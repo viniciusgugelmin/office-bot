@@ -23,6 +23,21 @@
   </p>
 </p>
 
+## Commands list
+
+| Command | Description | Arguments |
+| ------- | ----------- | ------------------------ |
+| `help` | Show commands list | - |
+| `serverinfo`, `sinfo` | Show server info | - |
+| `createvoicechannel`, `cvc` | Create voice channel | channel-name*+category-id |
+| `createtextchannel`, `ctc` | Create text channel | channel-name*+category-id |
+| `clearchannel`, `cc` | Clear channel | - |
+| `kick` | Kick member | @member* |
+| `ban` | Ban member | @member* |
+| `ping` | Pong! | - |
+| `sum` | Sum | - |
+| `okay`, `ok` | Normalize jobs and variables, stop summing... | - |
+
 
 <details open="open">
   <summary><h2 style="display: inline-block">Abstract</h2></summary>
