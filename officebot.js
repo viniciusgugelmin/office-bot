@@ -17,6 +17,7 @@ bot.on('ready', () => {
     if (allowed) {
         autoActivity(bot, activities);
         autoReadCommand(bot);
+        autoReadReactions(bot);
     } else {
         autoActivity(bot, ['ERROR']);
     }

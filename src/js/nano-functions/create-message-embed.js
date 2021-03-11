@@ -3,7 +3,7 @@ const reactInternalError = require("./react-internal-error");
 // Config
 const { MessageEmbed } = require("discord.js");
 
-module.exports = (title = '', fields = '') => {
+module.exports = (title = '', fields = '', footer = '') => {
     try {
         let embed = new MessageEmbed()
             .setColor('#0099ff')
@@ -16,6 +16,10 @@ module.exports = (title = '', fields = '') => {
 
         if (fields) {
             embed.addFields(fields);
+        }
+
+        if (footer) {
+            embed.setFooter(footer);
         }
 
         return embed;

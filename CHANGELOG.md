@@ -63,12 +63,14 @@
 - `'kick'` Kick member
 - `'ban'` Ban member
 
-## [1.2.1] - 2021-02-25
+## [1.2.1] - 2021-03-11
 ### Added
 - Don't allow auto read command (main-function)
 - Don't allow bot (main-function)
 - Activities (items)
 - Internal error message
+- Auto read reactions (auto-functions)
+- Paginate (main-functions)
 
 #### Commands added
 - `'sum'` Sum

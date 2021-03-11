@@ -1,29 +1,34 @@
 // Nano functions
 const addReactions = require("../nano-functions/add-reactions");
+const reactInternalError = require("../nano-functions/react-internal-error");
 // Config
 const { BOT_NAME } = require("../../config.json");
 
 module.exports = async (bot, idChannel, idMessage, text, reactions = []) => {
-    const channel = await bot.channels.fetch(idChannel);
+    try {
+        const channel = await bot.channels.fetch(idChannel);
 
-    channel.messages.fetch().then((messages) => {
-        if (!idMessage || messages.size === 0) {
-            channel.send(text).then(message => {
-                addReactions(message, reactions);
-            });
-        } else {
-            for (const message of messages) {
-                let lastMessage = message[1];
+        channel.messages.fetch().then((messages) => {
+            if (!idMessage || messages.size === 0) {
+                channel.send(text).then(message => {
+                    addReactions(message, reactions);
+                });
+            } else {
+                for (const message of messages) {
+                    let lastMessage = message[1];
 
-                let isBotName = lastMessage.author.username === BOT_NAME;
-                let isBotAuthor = lastMessage.author.bot;
-                let isIdMessage = lastMessage.id === idMessage;
+                    let isBotName = lastMessage.author.username === BOT_NAME;
+                    let isBotAuthor = lastMessage.author.bot;
+                    let isIdMessage = lastMessage.id === idMessage;
 
-                if (isBotName && isBotAuthor && isIdMessage)  {
-                    lastMessage.edit(text);
-                    addReactions(lastMessage, reactions);
+                    if (isBotName && isBotAuthor && isIdMessage)  {
+                        lastMessage.edit(text);
+                        addReactions(lastMessage, reactions);
+                    }
                 }
             }
-        }
-    });
+        });
+    } catch (e) {
+        reactInternalError(message, 'paginate.js', e);
+    }
 }

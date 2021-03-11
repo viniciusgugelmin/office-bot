@@ -5,7 +5,7 @@ const { PREFIX, NOT_ALLOWED_MESSAGE } = require("../../config.json");
 
 module.exports = (bot, message, aliases, permissionNeeded, callback) => {
     const { content } = message;
-    const alias = aliases.filter((alias) => alias === content.slice(PREFIX.length) || content.slice(PREFIX.length).startsWith(`${alias} `))
+    const alias = aliases.filter((alias) => alias === content.slice(PREFIX.length) || content.slice(PREFIX.length).startsWith(`${alias} `));
 
     if (alias[0]) {
         const command = `${PREFIX}${alias[0]}`;

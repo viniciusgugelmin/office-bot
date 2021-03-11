@@ -104,19 +104,17 @@ module.exports = (bot) => {
 
             index++;
             if (!resolved) {
-                const commandsSum = commands[index].commands;
-                readCommand(bot, message, commandsSum, '', message => {
+                readCommand(bot, message, commands[index].commands, '', message => {
+                    message.channel.send(formatText('Job:', 'addBold') + ' sum');
                     numberAux = 0;
                     typeOfJob = 'sum';
-                    message.channel.send(formatText('Job:', 'addBold') + ' sum');
                     resolved = true;
                 });
             }
 
             index++;
             if (!resolved) {
-                const commandsOkay = commands[index].commands;
-                readCommand(bot, message, commandsOkay, '', message => {
+                readCommand(bot, message, commands[index].commands, '', message => {
                     message.channel.send(formatText('Job:', 'addBold') + ' normal');
                     stringAux = '';
                     numberAux = 0;

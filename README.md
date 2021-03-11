@@ -65,7 +65,8 @@ Configure the "config.json" file.
   "NOT_ALLOWED_MESSAGE": "Choose a message...",
   "WRONG_PLACE_MESSAGE": "Choose a message...",
   "ARGUMENTS_MISSING_MESSAGE": "Choose a message...",
-  "ARGUMENT_INCORRECT": "Choose a message..."
+  "ARGUMENT_INCORRECT": "Choose a message...",
+  "INTERNAL_ERROR": "Choose a message..."
 }
 ```
 And you're going to have something like this...
@@ -79,7 +80,8 @@ And you're going to have something like this...
   "NOT_ALLOWED_MESSAGE": "You do not have permission to use this command!",
   "WRONG_PLACE_MESSAGE": "This command can not be used in private!",
   "ARGUMENTS_MISSING_MESSAGE": "Arguments missing!",
-  "ARGUMENT_INCORRECT": "Argument incorrect!"
+  "ARGUMENT_INCORRECT": "Argument incorrect!",
+  "INTERNAL_ERROR": "❌ An error occurred!"
 }
 ```
 
