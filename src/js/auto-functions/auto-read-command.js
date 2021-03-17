@@ -14,6 +14,7 @@ const createSum = require("../main-functions/create-sum");
 const createSub = require("../main-functions/create-sub");
 const createClearChannel = require("../main-functions/create-clear-channel");
 const createPing = require("../main-functions/create-ping");
+const searchGoogle = require("../main-functions/search-google");
 // Nano functions
 const createMessageEmbed = require("../nano-functions/create-message-embed");
 const addReactions = require("../nano-functions/add-reactions");
@@ -132,6 +133,14 @@ module.exports = (bot) => {
                     arrayAux = [];
                     objectAux = {};
                     typeOfJob = defaultJob;
+                    resolved = true;
+                });
+            }
+
+            index++;
+            if (!resolved) {
+                readCommand(bot, message, commands[index].commands, '', message => {
+                    searchGoogle(bot, message, commands[index].commands);
                     resolved = true;
                 });
             }
