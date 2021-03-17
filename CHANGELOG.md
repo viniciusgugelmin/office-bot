@@ -84,4 +84,4 @@
 - Sub (main-function)
 
 #### Commands added
-- `'sub` Sub
+- `'sub'` Sub
