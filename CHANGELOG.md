@@ -78,3 +78,10 @@
 
 #### Prefix DM
 - `!`
+
+## [1.2.2] - 2021-03-11
+### Added
+- Sub (main-function)
+
+#### Commands added
+- `'sub` Sub

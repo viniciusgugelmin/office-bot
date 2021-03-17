@@ -36,6 +36,7 @@
 | `ban` | Ban member | @member* |
 | `ping` | Pong! | - |
 | `sum` | Sum | - |
+| `sub` | Sub | - |
 | `okay`, `ok` | Normalize jobs and variables, stop summing... | - |
 
 

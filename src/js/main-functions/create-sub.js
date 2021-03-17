@@ -19,9 +19,13 @@ module.exports = (bot, message, numberAux, callback) => {
     }
 
     if (!_.isNaN(number)) {
-        let numberToString = number < 0 ? ` + (${number})` : ` + ${number}`;
-        message.channel.send(formatText(numberAux + numberToString + ' = ' + (numberAux + number), 'addBold'));
-        numberAux += number;
+        let numberToString = number < 0 ? ` - (${number})` : ` - ${number}`;
+        message.channel.send(formatText(numberAux + numberToString + ' = ' + (numberAux - number), 'addBold'));
+        numberAux -= number;
+
+        if (numberAux === 0) {
+            message.channel.send(formatText('Your number has reached 0, the next number will be read as positive!', 'addBold'));
+        }
 
         callback(numberAux);
     }

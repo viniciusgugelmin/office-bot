@@ -11,6 +11,7 @@ const createServerInfo = require("../main-functions/create-server-info");
 const createChannel = require("../main-functions/create-channel");
 const moderateMember = require("../main-functions/moderate-member");
 const createSum = require("../main-functions/create-sum");
+const createSub = require("../main-functions/create-sub");
 const createClearChannel = require("../main-functions/create-clear-channel");
 const createPing = require("../main-functions/create-ping");
 // Nano functions
@@ -115,6 +116,16 @@ module.exports = (bot) => {
             index++;
             if (!resolved) {
                 readCommand(bot, message, commands[index].commands, '', message => {
+                    message.channel.send(formatText('Job:', 'addBold') + ' sub');
+                    numberAux = 0;
+                    typeOfJob = 'sub';
+                    resolved = true;
+                });
+            }
+
+            index++;
+            if (!resolved) {
+                readCommand(bot, message, commands[index].commands, '', message => {
                     message.channel.send(formatText('Job:', 'addBold') + ' normal');
                     stringAux = '';
                     numberAux = 0;
@@ -128,6 +139,11 @@ module.exports = (bot) => {
             switch (typeOfJob) {
                 case 'sum':
                     createSum(bot, message, numberAux, number => {
+                        numberAux = number;
+                    });
+                    break;
+                case 'sub':
+                    createSub(bot, message, numberAux, number => {
                         numberAux = number;
                     });
                     break;
