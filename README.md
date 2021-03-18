@@ -70,7 +70,7 @@ yarn install
 ```
 
 `BOT_TOKEN`
-To create the bot at Discord, follow the step 1 ("Configuring a Discord bot") [here](https://www.digitalocean.com/community/tutorials/how-to-build-a-discord-bot-with-node-js-pt).
+To create the bot at Discord, follow the step 1 ("Configuring a Discord bot") [here](https://www.digitalocean.com/community/tutorials/how-to-build-a-discord-bot-with-node-js).
 
 
 `GOOGLE_TOKEN`
