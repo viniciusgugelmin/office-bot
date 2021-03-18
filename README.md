@@ -69,11 +69,19 @@ git clone https://github.com/viniciusgugelmin/office-bot.git
 yarn install
 ```
 
+`BOT_TOKEN`
 To create the bot at Discord, follow the step 1 ("Configuring a Discord bot") [here](https://www.digitalocean.com/community/tutorials/how-to-build-a-discord-bot-with-node-js-pt).
+
+`GOOGLE_TOKEN`
+To get the Google tokens, create your project [here](https://cse.google.com/cse/all) with Google URL ("www.google.com") and click at first steps in "Programmatic access" -> JSON API -> Get a Key
+`GOOGLE_ENGINE_TOKEN`
+...this is your public URL that you can get it [here](https://cse.google.com/cse/all) inside your project.
 
 Configure the "config.json" file.
 ```json
 {
+  "GOOGLE_TOKEN": "You can get this token from the link above",
+  "GOOGLE_ENGINE_TOKEN": "You can get this token from the link above",
   "BOT_TOKEN": "You can get this token from the link above",
   "BOT_NAME": "The name must be equal to the bot at Discord",
   "PREFIX": "Choose a prefix...",
@@ -89,6 +97,8 @@ Configure the "config.json" file.
 And you're going to have something like this...
 ```json
 {
+  "GOOGLE_TOKEN": "12345678910111213141516171819",
+  "GOOGLE_ENGINE_TOKEN": "12345678910111213141516171819",
   "BOT_TOKEN": "12345678910111213141516171819",
   "BOT_NAME": "Office Bot",
   "PREFIX": "$",
