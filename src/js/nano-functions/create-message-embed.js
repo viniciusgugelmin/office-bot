@@ -32,6 +32,6 @@ module.exports = (title = '', fields = '', footer = '', description = '', image 
 
         return embed;
     } catch (e) {
-        reactInternalError(message, 'create-message-embed.js', e);
+        reactInternalError('create-message-embed.js', e);
     }
 }

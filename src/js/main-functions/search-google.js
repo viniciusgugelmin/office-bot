@@ -4,6 +4,7 @@ const formatText = require("../base-functions/format-text");
 const replaceArgsCommand = require("../nano-functions/replace-args-command");
 const createMessageEmbed = require("../nano-functions/create-message-embed");
 const reactInternalError = require("../nano-functions/react-internal-error");
+const createFieldsSearchMessageEmbed = require("../nano-functions/create-fields-search-message-embed");
 // Config
 const { GOOGLE_TOKEN, GOOGLE_ENGINE_TOKEN, ARGUMENTS_MISSING_MESSAGE } = require("../../config.json");
 const request = require("node-superfetch");
@@ -18,9 +19,11 @@ module.exports = async (bot, message, commandsSearchGoogle) => {
         href = await search(query);
         if (!href) return message.channel.send((formatText('Unknown search.', 'addBold')));
 
-        let title = href.title, fields = '',
-            footer = 'Powered by Google', description = href.snippet,
-            image = href.pagemap && href.pagemap.cse_thumbnail ? href.pagemap.cse_thumbnail[0].src : null, url = href.link;
+        let title = href[0].title, fields = '',
+            footer = 'Powered by Google • https://www.google.com/search?q= ' + query, description = href[0].snippet,
+            image = href[0].pagemap && href[0].pagemap.cse_thumbnail ? href[0].pagemap.cse_thumbnail[0].src : null, url = href[0].link;
+
+        fields = createFieldsSearchMessageEmbed(href, 1, 5);
 
         const embed = createMessageEmbed(title, fields, footer, description, image, url);
 
@@ -32,10 +35,9 @@ module.exports = async (bot, message, commandsSearchGoogle) => {
             });
 
             if (!body.items) return null;
-            return body.items[0];
+            return body.items;
         }
     } catch (e) {
-        console.log(a)
         reactInternalError(message, 'search-google.js', e);
     }
 }
