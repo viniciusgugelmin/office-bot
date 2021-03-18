@@ -82,6 +82,8 @@
 ## [1.2.2] - 2021-03-17
 ### Added
 - Sub (main-function)
+- Search google (main-function)
 
 #### Commands added
 - `'sub'` Sub
+- `['google', 'g']` Google search
