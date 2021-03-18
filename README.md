@@ -72,8 +72,10 @@ yarn install
 `BOT_TOKEN`
 To create the bot at Discord, follow the step 1 ("Configuring a Discord bot") [here](https://www.digitalocean.com/community/tutorials/how-to-build-a-discord-bot-with-node-js-pt).
 
+
 `GOOGLE_TOKEN`
 To get the Google tokens, create your project [here](https://cse.google.com/cse/all) with Google URL ("www.google.com") and click at first steps in "Programmatic access" -> JSON API -> Get a Key
+
 `GOOGLE_ENGINE_TOKEN`
 ...this is your public URL that you can get it [here](https://cse.google.com/cse/all) inside your project.
 
