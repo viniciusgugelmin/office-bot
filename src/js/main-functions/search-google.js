@@ -20,7 +20,7 @@ module.exports = async (bot, message, commandsSearchGoogle) => {
 
         let title = href.title, fields = '',
             footer = 'Powered by Google', description = href.snippet,
-            image = href.pagemap ? href.pagemap.cse_thumbnail[0].src : null, url = href.link;
+            image = href.pagemap && href.pagemap.cse_thumbnail ? href.pagemap.cse_thumbnail[0].src : null, url = href.link;
 
         const embed = createMessageEmbed(title, fields, footer, description, image, url);
 
@@ -35,6 +35,7 @@ module.exports = async (bot, message, commandsSearchGoogle) => {
             return body.items[0];
         }
     } catch (e) {
+        console.log(a)
         reactInternalError(message, 'search-google.js', e);
     }
 }
