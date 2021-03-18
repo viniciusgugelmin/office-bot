@@ -38,6 +38,7 @@
 | `sum` | Sum | - |
 | `sub` | Sub | - |
 | `okay`, `ok` | Normalize jobs and variables, stop summing... | - |
+| `google`, `g` | Google search | search* |
 
 
 <details open="open">
