@@ -9,6 +9,7 @@ module.exports = [
     {commands: ['ping'], description: 'Pong!'},
     {commands: ['sum'], description: 'Sum'},
     {commands: ['sub'], description: 'Sub'},
-    {commands: ['okay', 'ok'], description: 'Normalize jobs and variables, stop summing...'}
+    {commands: ['okay', 'ok'], description: 'Normalize jobs and variables, stop summing...'},
+    {commands: ['google', 'g'], description: 'Google search', arguments: '\<\search> \n required'}
 ]
 
