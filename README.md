@@ -93,7 +93,18 @@ Configure the "config.json" file.
   "WRONG_PLACE_MESSAGE": "Choose a message...",
   "ARGUMENTS_MISSING_MESSAGE": "Choose a message...",
   "ARGUMENT_INCORRECT": "Choose a message...",
-  "INTERNAL_ERROR": "Choose a message..."
+  "INTERNAL_ERROR": "Choose a message...",
+
+  "DB": {
+    "HOST": "Database host name",
+    "DATABASE": "Database name",
+    "USERNAME": "Database username",
+    "PASSWORD": "Database password"
+  },
+
+  "CHANNEL": {
+    "ID": "You can get this ID allowing developing mode at Discord and selecting a channel with right click"
+  }
 }
 ```
 And you're going to have something like this...
