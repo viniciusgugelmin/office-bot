@@ -110,7 +110,18 @@ And you're going to have something like this...
   "WRONG_PLACE_MESSAGE": "This command can not be used in private!",
   "ARGUMENTS_MISSING_MESSAGE": "Arguments missing!",
   "ARGUMENT_INCORRECT": "Argument incorrect!",
-  "INTERNAL_ERROR": "❌ An error occurred!"
+  "INTERNAL_ERROR": "❌ An error occurred!",
+
+  "DB": {
+    "HOST": "PUT YOUR HOST NAME HERE",
+    "DATABASE": "PUT YOUR DATABASE NAME HERE",
+    "USERNAME": "PUT YOUR USERNAME HERE",
+    "PASSWORD": "PUT YOUR PASSWORD HERE"
+  },
+
+  "CHANNEL": {
+    "ID": "PUT YOUR MAIN CHANNEL ID HERE"
+  }
 }
 ```
 

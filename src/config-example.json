@@ -10,5 +10,16 @@
   "WRONG_PLACE_MESSAGE": "This command can not be used in private!",
   "ARGUMENTS_MISSING_MESSAGE": "Arguments missing!",
   "ARGUMENT_INCORRECT": "Argument incorrect!",
-  "INTERNAL_ERROR": "❌ An error occurred!"
+  "INTERNAL_ERROR": "❌ An error occurred!",
+
+  "DB": {
+    "HOST": "host",
+    "DATABASE": "database",
+    "USERNAME": "username",
+    "PASSWORD": ""
+  },
+
+  "CHANNEL": {
+    "ID": "12345678910111213141516171819"
+  }
 }

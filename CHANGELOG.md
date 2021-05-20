@@ -87,3 +87,8 @@
 #### Commands added
 - `'sub'` Sub
 - `['google', 'g']` Google search
+
+## [1.3] - 2021-05-20
+### Added
+- MySQL connection
+- Auto check messages from database
